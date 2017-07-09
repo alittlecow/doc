@@ -1,4 +1,4 @@
 # Summary
 
-* [Introduction](README.md)
-* [Introduction2](database.md)
+* [说明](README.md)
+* [数据库设计](database.md)
