@@ -55,25 +55,8 @@
 }
 ```
 
-### 4. 支付订单接口
-**接口地址**：http://.../pay/payGoods
 
-#### 请求参数
-```javascript
-{
-    "userId":"1",    //用户id
-    "goodsId":"00001"  //支付的商品id
-}
-```
-#### 响应参数
-```javascript
-{
-    "result":"success",
-    "message":""
-}
-```
-
-### 5.个人账户余额查询接口
+### 4.个人账户余额查询接口
 **接口地址**：http://.../account/queryUserAccount
 
 #### 请求参数
@@ -91,7 +74,7 @@
 }
 ```
 
-### 6.个人账户流水查询接口
+### 5.个人账户流水查询接口
 **接口地址**：http://.../account/queryUserAccountHistory
 
 #### 请求参数
@@ -118,7 +101,7 @@
 }
 ```
 
-### 7.分销商提现申请接口
+### 6.分销商提现申请接口
 **接口地址**：http://.../settlment/applaySettlement
 
 #### 请求参数
@@ -137,7 +120,7 @@
 }
 ```
 
-### 8.分销商提现确认到账接口
+### 7.分销商提现确认到账接口
 
 
 **接口地址**：http://.../settlment/confirmSettlement
@@ -157,7 +140,7 @@
     "message":"",
 }
 ```
-### 9.分销商提现订单查询接口
+### 8.分销商提现订单查询接口
 
 
 **接口地址**：http://.../settlment/querySettlementList
@@ -186,7 +169,7 @@
     }
 }
 ```
-### 10.用户订单退款申请接口
+### 9.用户订单退款申请接口
 
 
 **接口地址**：http://.../refund/refundOrder
@@ -207,7 +190,7 @@
 }
 ```
 
-### 11.用户订单退款查询接口
+### 10.用户订单退款查询接口
 
 **接口地址**：http://.../refund/queryRefundList
 
