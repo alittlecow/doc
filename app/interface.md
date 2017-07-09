@@ -217,3 +217,137 @@
 }
 ```
 
+### 11.用户注册接口
+
+**接口地址**：http://119.23.248.130:8080/user/regiestUser
+
+#### 请求参数
+```javascript
+{
+    "userName":"ppp"，    //用户名
+    "password":"666666",//密码
+    "sex":"1",//性别 (1男性 0女性)
+    "birtyday":"1990-00-00",//生日
+    "mobile":"13777770000",
+    "email":"333@aa.com"//个人邮件
+}
+```
+#### 响应参数
+```javascript
+{
+    "result":"success",
+    "message":""
+}
+```
+### 11.用户注册接口
+
+**接口地址**：http://119.23.248.130:8080/user/regiestUser
+
+#### 请求参数
+```javascript
+{
+    "userName":"ppp"，    //用户名
+    "password":"666666",//密码
+    "sex":"1",//性别 (1男性 0女性)
+    "birtyday":"1990-00-00",//生日
+    "mobile":"13777770000",
+    "email":"333@aa.com"//个人邮件
+}
+```
+#### 响应参数
+```javascript
+{
+    "result":"success",
+    "message":""
+}
+```
+
+### 12.用户注册接口
+
+**接口地址**：http://119.23.248.130:8080/user/regiestUser
+
+#### 请求参数
+```javascript
+{
+    "userName":"ppp"，    //用户名,
+    "mobile":"13777770000",
+    "password":"666666"//密码
+}
+```
+#### 响应参数
+```javascript
+{
+    "result":"success",
+    "message":""
+}
+```
+
+### 13.个人账户充值接口
+
+**接口地址**：http://119.23.248.130:8080/user/recharge
+
+#### 请求参数
+```javascript
+{
+    "userId":"i"，    //用户id,
+    "money":"100" //充值金额（元）
+}
+```
+#### 响应参数
+```javascript
+{
+    "result":"success",
+    "message":""
+}
+```
+### 14.经销商设备修改接口
+**接口地址**：http://119.23.248.130:8080/device/updateDevice
+
+#### 请求参数
+```javascript
+{
+    "deviceId":"1"，    //设备id,
+    "isBreakDwon":"1" //1故障 0在线
+}
+```
+#### 响应参数
+```javascript
+{
+    "result":"success",
+    "message":""
+}
+```
+### 14.查询设备历史数据接口
+**接口地址**：http://119.23.248.130:8080/device/queryDeviceDataList
+
+#### 请求参数
+```javascript
+{
+    "deviceId":"1"   //设备id,
+    "userId":"1",   //用户id,
+    "startTime":"2017-08-08 00:00:00",//起始查询时间
+    "endTime":"2017-08-08 00:00:00"//结束查询时间
+}
+```
+#### 响应参数
+```javascript
+{
+    "result":"success",
+    "message":"",
+    "list":[
+    	{
+        "reportTime":"2017-08-08 00:00:00",//上报时间
+        "value":"555"//数值
+        },
+        {
+        "reportTime":"2017-08-08 00:00:00",//上报时间
+        "value":"555"//数值
+        }
+        ]
+}
+```
+
+
+
+
+
