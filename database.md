@@ -165,13 +165,8 @@
     | id                     | varchar | 订单id(主键)     |
     | user_id                   | varchar | 消费者id关联user表 |
     | create_at                | datetime |  订单创建时间        |
-<<<<<<< Updated upstream
-    | pay_at          | datetime | 订单发起支付时间         |
-    | pay_type          | tinyint | 支付类型（0 支付宝 1微信 2银联） |
-=======
     | pay_at          | datetime | 订单支付完成时间         |
     | pay_type          | varchar | 支付类型（0 支付宝 1微信 2个人账户） |
->>>>>>> Stashed changes
     | dealer_id               | varchar | 分销商id  |
     | trans_id                   | varchar | 交易流水号 |
     | goods_id                   | varchar | 一次交易的商品id |
@@ -208,9 +203,6 @@
     | refuse_memo                     | varchar | 拒绝退款备注    |
     | is_cancel                   | tinyint | 订单是否取消 |
 
-<<<<<<< Updated upstream
-
-=======
 ### 12.分销商提现单表 account_settlement    
 
    | 字段名称                    | type           | 备注  |
@@ -223,7 +215,7 @@
     |dealer_confirm_at  |datetime|分销商确认收款时间|
     |admin_confirm_at  |datetime|总公司确认时间|
     |admin_confirm_by  |varchar|总公司确认人|
->>>>>>> Stashed changes
+
 
   
 ### 18.账户交易流水 account_transaction_history
