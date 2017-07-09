@@ -165,8 +165,13 @@
     | id                     | varchar | 订单id(主键)     |
     | user_id                   | varchar | 消费者id关联user表 |
     | create_at                | datetime |  订单创建时间        |
+<<<<<<< Updated upstream
     | pay_at          | datetime | 订单发起支付时间         |
     | pay_type          | tinyint | 支付类型（0 支付宝 1微信 2银联） |
+=======
+    | pay_at          | datetime | 订单支付完成时间         |
+    | pay_type          | varchar | 支付类型（0 支付宝 1微信 2个人账户） |
+>>>>>>> Stashed changes
     | dealer_id               | varchar | 分销商id  |
     | trans_id                   | varchar | 交易流水号 |
     | goods_id                   | varchar | 一次交易的商品id |
@@ -198,12 +203,27 @@
     | apply_memo                   | varchar | 退款申请备注 |
     | apply_reason                   | varchar | 退款申请原因 |
     | status                | varchar |  退款单状态        |
-    | refund_at          | datetime | 退款时间         |
+    | refund_at          | datetime | 退款完成时间         |
     | refuse_reason          | varchar | 拒绝退款原因 |
     | refuse_memo                     | varchar | 拒绝退款备注    |
     | is_cancel                   | tinyint | 订单是否取消 |
 
+<<<<<<< Updated upstream
 
+=======
+### 12.分销商提现单表 account_settlement    
+
+   | 字段名称                    | type           | 备注  |
+    |:---------------------------:|:--------------:|:-----:|
+    |id    |varchar    | 结算单号id（主键）|
+    |dealer_id        |varchar    |    分销商id|
+    |status |varchar  |结算单状态(分销商申请，总公司确认，总公司打款，分销商收款确认)|
+    |money      |varchar  |提现金额|
+    |create_at          |datetime  |创建时间|
+    |dealer_confirm_at  |datetime|分销商确认收款时间|
+    |admin_confirm_at  |datetime|总公司确认时间|
+    |admin_confirm_by  |varchar|总公司确认人|
+>>>>>>> Stashed changes
 
   
 ### 18.账户交易流水 account_transaction_history
@@ -215,7 +235,7 @@
     |before_adjust_money          |decimal（11,2）  |调整前金额           |
     |adjust_money                 |decimal（11,2         |调整金额          |
     |after_adjust_money           |decimal（11,2   |调整后金额         |
-    |adjust_type                  |tinyint          |调整类型（0  用户充值 1 用户消费 2用户退款 3 分销商结算）          |
+    |adjust_type                  |tinyint          |调整类型（10 用户淘宝充值  11用户支付宝充值 1 用户消费 21用户退款 31 分销商结算          |
     |create_at                   |datetime           |流水创建时间          |
     |order_id                    |varchar（32）|订单id（用户充值： 充值订单id， 用户消费：订单id，用户退款：退款id，分销商结算：结算单id）|
    
