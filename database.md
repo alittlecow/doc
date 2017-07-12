@@ -135,11 +135,12 @@
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
     | id                     | varchar | 商品id(主键)     |
-    | device_id                   | varchar | 设备id |
+    | type                     | tinyint | 1:使用设备 2：充值账户    |
+    | device_id                   | varchar | 设备id （type为2时不为空） |
     | user_id                   | varchar | 设备当前使用者id |
-    | start_time                   | datetime | 使用开始时间 |
-    | end_time                | datetime |  使用结束时间        |
-    | cost_money                | decimal |  设备使用产生的费用        |
+    | start_time                   | datetime | 使用开始时间 （type为2时为充值开始时间）|
+    | end_time                | datetime |  使用结束时间   type为2时不为空）     |
+    | cost_money                | decimal |  产生的费用        |
 
 
 ### 13. 计费规则表 pay_rule
