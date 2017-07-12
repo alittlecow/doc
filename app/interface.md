@@ -1,3 +1,6 @@
+
+[TOC]
+
 ## app
 ### 1. 开启设备接口
 **接口地址**：http://.../device/openDevice
