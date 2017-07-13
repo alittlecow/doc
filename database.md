@@ -1,5 +1,11 @@
+### 1. 用户
+1.[用户表](1. 用户表 user)
+2.[账户信息表](2.账户信息表 account_info)
+3.[角色表](3. 角色表 role)
+4.[分销商信息表]( 4.分销商信息表 dealer_info)
 
-[TOC]
+### 2.设备
+1.[设备表](设备表)
 
 ### 表结构设计
 
@@ -49,21 +55,9 @@
     | is_withdraw                   | tinyint | 是否允许提现（1允许 0不允许） |
     
 
-### 5.分销商结算单表 account_settlement    
 
-   | 字段名称                    | type           | 备注  |
-    |:---------------------------:|:--------------:|:-----:|
-    |id    |varchar    | 结算单号id（主键）|
-    |dealer_id        |varchar    |    分销商id|
-    |status |varchar  |结算单状态(分销商申请，总公司确认，总公司打款，分销商收款确认)|
-    |actual_money      |varchar  |实际金额|
-    |plan_money      |varchar  | 计划金额（分成前的费用）|
-    |create_at          |datetime  |创建时间|
-    |dealer_confirm_at  |datetime|分销商确认收款时间|
-    |admin_confirm_at  |datetime|总公司确认时间|
-    |admin_confirm_by  |varchar|总公司确认人|
     
-### 6.设备表 device 
+### 5.设备表 device 
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|  
@@ -74,7 +68,7 @@
     | total_money                  | decimal(11,2) |  设备使用产生的总金额 |
     | total_time                  | bigint |  使用的总时间（秒）
     
-### 7.设备绑定表 device_bind 
+### 6.设备绑定表 device_bind 
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -85,7 +79,7 @@
 
    
     
-### 8. 设备终端信息表 device_terminal (去掉)
+### 7. 设备终端信息表 device_terminal (去掉)
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -98,7 +92,7 @@
     | *is_demo*                     | *varchar* | *是否是样机（保留）* |
 
  
-### 9.设备实时状态表 device_status（去掉）
+### 8.设备实时状态表 device_status（去掉）
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -106,7 +100,7 @@
     | ...                     | ... | ... |
 
 
-### 10.设备历史状态表 device_status_histroy
+### 9.设备历史状态表 device_status_histroy
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -118,7 +112,7 @@
     | value                     | ... | 数值 |
     | create_time                     | datetime | 创建时间 |
     
-### 11.id卡使用表 
+### 10.id卡使用表 
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -129,7 +123,7 @@
     | value                     | ... | 数值 |
     | create_time                     | datetime | 创建时间 |
 
-### 12.商品表 goods
+### 11.商品表 goods
   **设备的一次使用抽象成一个商品**
 
    | 字段名称                    | type           | 备注  |
@@ -143,14 +137,14 @@
     | cost_money                | decimal |  产生的费用        |
 
 
-### 13. 计费规则表 pay_rule
+### 12. 计费规则表 pay_rule
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
     | id                     | varchar(32) | 主键 |
     | fee                   | decimal(11,2) | 收费规则（元/每分钟） |
 
 
-### 14. 充值优惠策略 charge_policy
+### 13. 充值优惠策略 charge_policy
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
     | id                     | varchar(32) | 主键 |
@@ -158,7 +152,7 @@
     | add_value                     | decimal(11,2) | 赠送金额 |
     | is_enable                     |  tinyint | 是否生效（1是 0未生效） |
 
-### 15.订单表 order
+### 14.订单表 order
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -177,7 +171,7 @@
     | is_deleted          | tinyint | 订单是否删除（删除订单不在所有订单里展示） |
     | refund_id               | varchar | 退款单id关联refund_order表 |
     
-### 16.订单日志表 order_log
+### 15.订单日志表 order_log
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -189,7 +183,7 @@
     | create_by                     | varchar | 创建人    |
     | memo                   | varchar | 备注 |
 
-### 17.退款订单表 refund_order
+### 16.退款订单表 refund_order
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -203,7 +197,21 @@
     | refuse_memo                     | varchar | 拒绝退款备注    |
     | is_cancel                   | tinyint | 订单是否取消 |
 
-### 12.分销商提现单表 account_settlement    
+### 17.分销商结算单表 account_settlement    
+
+   | 字段名称                    | type           | 备注  |
+    |:---------------------------:|:--------------:|:-----:|
+    |id    |varchar    | 结算单号id（主键）|
+    |dealer_id        |varchar    |    分销商id|
+    |status |varchar  |结算单状态(分销商申请，总公司确认，总公司打款，分销商收款确认)|
+    |actual_money      |varchar  |实际金额|
+    |plan_money      |varchar  | 计划金额（分成前的费用）|
+    |create_at          |datetime  |创建时间|
+    |dealer_confirm_at  |datetime|分销商确认收款时间|
+    |admin_confirm_at  |datetime|总公司确认时间|
+    |admin_confirm_by  |varchar|总公司确认人|
+    
+### 18.分销商提现单表 account_settlement    
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -218,7 +226,7 @@
 
 
   
-### 18.账户交易流水 account_transaction_history
+### 19.账户交易流水 account_transaction_history
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -232,7 +240,7 @@
     |order_id                    |varchar（32）|订单id（用户充值： 充值订单id， 用户消费：订单id，用户退款：退款id，分销商结算：结算单id）|
    
 
-### 19.管理员账户交易流水 root_account_transaction_history   
+### 20.管理员账户交易流水 root_account_transaction_history   
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
     |id                       |varchar（32）      |流水id（主键）|
@@ -243,7 +251,7 @@
     |create_at                   |datetime           |流水创建时间          |
     |order_id                    |varchar（32）|订单id（用户充值： 充值订单id， 用户消费：订单id，用户退款：退款id，分销商结算：结算单id）|
 
-### 20. 推送消息表 push_message
+### 21. 推送消息表 push_message
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
     | id                     | varchar(32) | 主键 |
