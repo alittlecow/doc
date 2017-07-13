@@ -13,7 +13,6 @@
 - [充值优惠策略](#充值优惠策略)
 - [订单表](#订单表)
 - [订单日志表](#订单日志表)
-- [退款订单表](#退款订单表)
 - [分销商结算单表](#分销商结算单表)
 - [分销商提现单表](#分销商提现单表)
 - [账户交易流水](#账户交易流水)
@@ -164,12 +163,11 @@
     | dealer_id               | varchar | 分销商id  |
     | trans_id                   | varchar | 交易流水号 |
     | goods_id                   | varchar | 一次交易的商品id |
-    | order_money                   | varchar | 订单金额 |
-    | status                   | tinyint | 订单状态（待支付，支付中，支付完成...） |
-    | *status_msg*                | *varchar* |  *状态描述信息（保留）*        |
-    | *memo*          | *varchar* | *订单备注（保留*）|
+    | order_money                   | bigdecimal | 订单金额 |
+    | pay_status                   | tinyint | 支付状态（待支付，支付中，支付完成(支付成功或/支付失败)） |
+    | order_status                   | tinyint | 订单状态（初始化，订单取消，已消费） |
     | is_deleted          | tinyint | 订单是否删除（删除订单不在所有订单里展示） |
-    | refund_id               | varchar | 退款单id关联refund_order表 |
+
 
 ###  订单日志表
 #### 13.order_log
@@ -184,22 +182,6 @@
     | create_by                     | varchar | 创建人    |
     | memo                   | varchar | 备注 |
 
-
-### 退款订单表
-#### 14.refund_order
-
-
-   | 字段名称                    | type           | 备注  |
-    |:---------------------------:|:--------------:|:-----:|
-    | id                     | varchar | 退款订单号(主键)     |
-    | apply_at                   | varchar | 退款申请时间 |
-    | apply_memo                   | varchar | 退款申请备注 |
-    | apply_reason                   | varchar | 退款申请原因 |
-    | status                | varchar |  退款单状态        |
-    | refund_at          | datetime | 退款完成时间         |
-    | refuse_reason          | varchar | 拒绝退款原因 |
-    | refuse_memo                     | varchar | 拒绝退款备注    |
-    | is_cancel                   | tinyint | 订单是否取消 |
 
 ### 分销商结算单表
 #### 15.account_settlement    
