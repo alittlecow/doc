@@ -132,7 +132,7 @@
     | device_id                   | varchar | 设备id （type为2时不为空） |
     | user_id                   | varchar | 设备当前使用者id |
     | start_time                   | datetime | 使用开始时间 （type为2时为充值开始时间）|
-    | end_time                | datetime |  使用结束时间   type为2时不为空）     |
+    | end_time                | datetime |  使用结束时间   type为2时为空）     |
     | cost_money                | decimal |  产生的费用        |
 
 ### 计费规则表
@@ -184,8 +184,10 @@
     | create_by                     | varchar | 创建人    |
     | memo                   | varchar | 备注 |
 
+
 ### 退款订单表
 #### 14.refund_order
+
 
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
@@ -239,7 +241,7 @@
     |before_adjust_money          |decimal（11,2）  |调整前金额           |
     |adjust_money                 |decimal（11,2         |调整金额          |
     |after_adjust_money           |decimal（11,2   |调整后金额         |
-    |adjust_type                  |tinyint          |调整类型（10 用户淘宝充值  11用户支付宝充值 1 用户消费 21用户退款 31 分销商结算          |
+    |adjust_type                  |tinyint          |调整类型（10 用户淘宝充值  11用户支付宝充值 1 用户消费  31 分销商结算          |
     |create_at                   |datetime           |流水创建时间          |
     |order_id                    |varchar（32）|订单id（用户充值： 充值订单id， 用户消费：订单id，用户退款：退款id，分销商结算：结算单id）|
    
@@ -287,9 +289,6 @@
     | *is_demo*                     | *varchar* | *是否是样机（保留）* |
     
 
-
-
-    
 
 
 

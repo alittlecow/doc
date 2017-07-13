@@ -55,31 +55,37 @@
     "message":"",
     "data":{
     	"money":"10.00"//需要支付的费用（元）,
-   	 "goodsId":"00001" //当前使用产生的商品id
+   	 "orderId":"00001" //返回的订单id
     }
     
 }
 ```
-###  支付订单接口
-**接口地址**：http://.../pay/payGoods
 
+###账户充值接口
+**接口地址**：http://.../account/recharge
+>
 #### 请求参数
 ```javascript
 {
     "userId":"1",    //用户id
-    "goodsId":"00001"  //支付的商品id
+    "money":"10"  //充值金额（元）
 }
 ```
 #### 响应参数
 ```javascript
 {
     "result":"success",
-    "message":""
+    "message":"" ,
+    "data":{
+    	"orderId":"00002" //返回的订单id
+    }
 }
 ```
 
 
+
 ### 个人账户余额查询接口
+
 **接口地址**：http://.../account/queryUserAccount
 
 #### 请求参数
@@ -213,69 +219,8 @@
     ]
 }
 ```
-### 用户订单退款申请接口
 
-
-**接口地址**：http://.../refund/refundOrder
-
-#### 请求参数
-```javascript
-{
-    "userId":"1"，    //用户id
-    "orderId":"0003"//订单号,
-}
-```
-#### 响应参数
-```javascript
-{
-    "result":"success",
-    "message":""
-}
-```
-
-### 用户订单退款查询接口
-
-**接口地址**：http://.../refund/queryRefundList
-
-#### 请求参数
-```javascript
-{
-    "userId":"1"，    //用户id
-    "status":"5"//订单退款状态,
-     "startTime":"2017-09-09 00:00:00",
-	"endTime":"2017-09-09 00:00:00",
-	"pageNo":"1",//页码
-	"onePageNum":"10"//每页数量
-}
-```
-#### 响应参数
-```javascript
-{
-    "result":"success",
-    "message":"",
-	"pageNo":"1",//页码
-	"pages":"10" //总页数
-    "data":[
-    {
-        "id":"1",//退款订单号(主键)
-        "status":"5",//退款单状态
-        "moeny":"1000",//退款单金额（元）
-        "applAt":"2017-07-07 00:00:00",//退款申请时间
-        "refundAt":"2017-07-07 00:00:00"//退款完成时间
-    },
-    {
-        "id":"1",//退款订单号(主键)
-        "status":"5",//退款单状态
-        "moeny":"1000",//退款单金额（元）
-        "applAt":"2017-07-07 00:00:00",//退款申请时间
-        "refundAt":"2017-07-07 00:00:00"//退款完成时间
-    }
-    ]
-}
-```
-
-### 用户注册接口
-
+###用户注册接口
 **接口地址**：http://119.23.248.130:8080/user/regiestUser
 
 #### 请求参数
@@ -335,6 +280,7 @@
 }
 ```
 
+
 ### 个人账户充值接口
 
 **接口地址**：http://119.23.248.130:8080/user/recharge
@@ -353,7 +299,7 @@
     "message":""
 }
 ```
-### 设备修改接口
+### 15.设备修改接口
 **接口地址**：http://119.23.248.130:8080/device/updateDevice
 
 #### 请求参数
