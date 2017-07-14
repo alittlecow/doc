@@ -122,17 +122,12 @@
 
 ### 商品表
 #### 9.goods
-  **设备的一次使用抽象成一个商品**
-
    | 字段名称                    | type           | 备注  |
     |:---------------------------:|:--------------:|:-----:|
     | id                     | varchar | 商品id(主键)     |
-    | type                     | tinyint | 1:使用设备 2：充值账户    |
-    | device_id                   | varchar | 设备id （type为2时不为空） |
-    | user_id                   | varchar | 设备当前使用者id |
-    | start_time                   | datetime | 使用开始时间 （type为2时为充值开始时间）|
-    | end_time                | datetime |  使用结束时间   type为2时为空）     |
-    | cost_money                | decimal |  产生的费用        |
+    | type                     | tinyint | 1设备使用次数（单位：次）2设备使用时间（单位：秒） 3账户充值（单位：元）    |
+    | money                | decimal |  产生的费用        |
+    | value                | decimal |  根据type对应的值       |
 
 ### 计费规则表
 #### 10. pay_rule
