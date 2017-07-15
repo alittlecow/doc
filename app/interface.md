@@ -41,46 +41,6 @@
 }
 ```
 
-###  开启设备接口
-**接口地址**：http://.../device/openDevice
-
-#### 请求参数
-```javascript
-{
-    "userId":"1",    //用户id
-    "deviceId":"00001"  //设备id
-}
-```
-#### 响应参数
-```javascript
-{
-    "result":"success",
-    "message":""
-}
-```
-
-### 关闭设备接口
-**接口地址**：http://.../device/closeDevice
-
-#### 请求参数
-```javascript
-{
-    "userId":"1",    //用户id
-    "deviceId":"00001"  //设备id
-}
-```
-#### 响应参数
-```javascript
-{
-    "result":"success",
-    "message":"",
-    "data":{
-    	"money":"10.00"//需要支付的费用（元）,
-   	 "orderId":"00001" //返回的订单id
-    }
-    
-}
-```
 
 ###账户充值接口
 **接口地址**：http://.../account/recharge
@@ -88,7 +48,7 @@
 #### 请求参数
 ```javascript
 {
-    "userId":"1",    //用户id
+    "token":"1",    //用户token
     "money":"10"  //充值金额（元）
 }
 ```
@@ -108,7 +68,9 @@
 #### 请求参数
 ```javascript
 {
-    "orderId":"1"    //订单id
+    "orderId":"1"    //订单id,
+     "token":"1",    //用户token
+
 }
 ```
 #### 响应参数
@@ -127,7 +89,7 @@
 #### 请求参数
 ```javascript
 {
-    "userId":"1"    //用户id
+     "token":"1",    //用户token
 }
 ```
 #### 响应参数
@@ -147,7 +109,7 @@
 #### 请求参数
 ```javascript
 {
-    "userId":"1"    //用户id,
+    "token":"1",    //用户token
     "beginTime":"2017-07-07 00:00:00"    //查询开始时间,
     "endTime":"2017-07-07 00:00:00"    //查询结束时间，
     "pageNo":"1",//页码
@@ -163,11 +125,11 @@
     "pages":"10" //总页数
     "data":[
     {
-        "adjustType":"1"//调整类型（10 用户淘宝充值  11用户支付宝充值 1 用户消费 21用户退款 31 分销商结算）,
+        "adjustType":"1"//调整类型（0用户充值  1用户消费  2分成结算）,
         "createAt":"2017-07-07 00:00:00"//流水创建时间，
         "adjustMoeny":"500"//调整金额（元）
     },{
-   	 "adjustType":"1"//调整类型（10 用户淘宝充值  11用户支付宝充值 1 用户消费 21用户退款 31 分销商结算）,
+   	 "adjustType":"1"//调整类型（0用户充值  1用户消费  2分成结算）,
         "createAt":"2017-07-07 00:00:00"//流水创建时间，
         "adjustMoeny":"500"//调整金额（元）
     }
@@ -256,8 +218,8 @@
 }
 ```
 
-###用户注册接口
-**接口地址**：http://119.23.248.130:8080/user/regiestUser
+###用户个人信息修改接口
+**接口地址**：http://119.23.248.130:8080/user/update
 
 #### 请求参数
 ```javascript
@@ -285,9 +247,8 @@
 #### 请求参数
 ```javascript
 {
-    "userName":"ppp"，    //用户名,（选择其一）
-    "mobile":"13777770000",（选择其一）
-    "password":"666666"//密码
+    "mobile":"13777770000",
+    "verifyCode":"666666"//手机验证码
 }
 ```
 #### 响应参数
