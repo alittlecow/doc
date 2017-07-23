@@ -22,7 +22,7 @@
 
 
 ###  订单生成接口
-**接口地址**：http://.../device/openDevice
+**接口地址**：http://.../api/app/order/create
 
 #### 请求参数
 ```javascript
@@ -33,11 +33,46 @@
 #### 响应参数
 ```javascript
 {
-    "result":"success",
-    "message":"",
-    "data":{
-    "orderId":"2123"
-    }
+    {
+  "code": 0,
+  "data": {
+    "orderId": "a9b1ae11cd544501a9505a0fa7ed1ab0"
+  }
+}
+}
+```
+
+### 消费菜单接口
+**接口地址**：http://.../api/app/goods/list
+
+#### 请求参数
+```javascript
+{
+    "type":"1",   //商品类型 1设备使用次数（单位：次）2账户充值（单位：元
+    "page":"1",  //页码
+    "limit":"1"//每页数量
+
+}
+```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+         "data": {
+        "totalCount": 2,  //总数量
+        "limit": 1,			//每页数量
+        "totalPage": 2,  //总页数
+        "page": 2,   //当前页码
+        "list": [
+          {
+            "id": "38fea234d4a74742a37a1bfd2e2d99a6",
+            "name": "10次 50元",
+            "type": 1,
+            "value": 10,
+            "money": 50
+          }
+        ]
+  }
 }
 ```
 
@@ -219,27 +254,42 @@
 ```
 
 ###用户个人信息修改接口
-**接口地址**：http://119.23.248.130:8080/user/update
+**接口地址**：http://119.23.248.130:8080/api/app/user/update
 
 #### 请求参数
 ```javascript
 {
+	"token":"1111"，  
     "userName":"ppp"，    //用户名
-    "password":"666666",//密码
     "sex":"1",//性别 (1男性 0女性)
     "birtyday":"1990-00-00",//生日
-    "mobile":"13777770000",
     "email":"333@aa.com"//个人邮件
 }
 ```
 #### 响应参数
 ```javascript
 {
-    "result":"success",
-    "message":""
+    "code": 0,
+    "msg":""
 }
 ```
+###用户个人信息查询接口
+**接口地址**：http://119.23.248.130:8080/api/app/user/info
+
+#### 请求参数
+```javascript
+{
+    "token":"1111"，  
+}
 ```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+    "msg":""
+}
+```
+
 ### 用户注册接口
 
 **接口地址**：http://119.23.248.130:8080/api/app/user/register
