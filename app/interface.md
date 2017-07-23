@@ -239,41 +239,81 @@
     "message":""
 }
 ```
+```
+### 用户注册接口
 
-### 用户登陆接口
-
-**接口地址**：http://119.23.248.130:8080/user/login
+**接口地址**：http://119.23.248.130:8080/api/app/user/register
 
 #### 请求参数
 ```javascript
 {
     "mobile":"13777770000",
+   "password":"a123456",
     "verifyCode":"666666"//手机验证码
 }
 ```
 #### 响应参数
 ```javascript
 {
-    "result":"success",
-    "message":""
+    "code":"0",//0表示成功
+    "msg":""
 }
 ```
 
-### 用户登出接口
+### 用户登陆接口
 
-**接口地址**：http://119.23.248.130:8080/user/logout
+**接口地址**：http://119.23.248.130:8080/api/app/user/login
 
 #### 请求参数
 ```javascript
 {
-    "userId":"1"   //用户od
+    "mobile":"13777770000",
+    "passowrd":"666666"//手机验证码
 }
 ```
 #### 响应参数
 ```javascript
 {
-    "result":"success",
-    "message":""
+   "code": 0,
+  "expire": 43200,//失效时间
+  "token": "f46501e02921cff81ec8bffcf5e22af0"
+}
+```
+
+### 用户修改密码接口
+
+**接口地址**：http://119.23.248.130:8080/api/app/user/resetPassword
+
+#### 请求参数
+```javascript
+{
+    "mobile":"13777770000",
+    "password":"123456h",
+    "newPassword":"1sfsdf"
+}
+```
+#### 响应参数
+```javascript
+{
+ "code":0,
+  "msg":""
+}
+```
+### 用户登出接口
+
+**接口地址**：http://119.23.248.130:8080/api/app/user/logout
+
+#### 请求参数
+```javascript
+{
+    "token":"1"
+}
+```
+#### 响应参数
+```javascript
+{
+    "code":0,
+    "msg":""
 }
 ```
 
