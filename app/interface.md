@@ -1,25 +1,125 @@
 
 
 
-## app
-- [用户注册接口](#用户注册接口)
-- [用户登陆接口](#用户登陆接口)
-- [用户登出接口](#用户登出接口)
-- [设备修改接口](#设备修改接口)
-- [开启设备接口](#开启设备接口)
-- [关闭设备接口](#关闭设备接口)
-- [查询设备历史数据接口](#查询设备历史数据接口)
-- [订单生成接口](#订单生成接口)
-- [个人账户余额查询接口](#个人账户余额查询接口)
-- [个人账户余额支付接口](#个人账户余额支付接口)
-- [个人账户流水查询接口](#个人账户流水查询接口)
-- [个人账户充值接口](#个人账户充值接口)
-- [用户订单退款申请接口](#用户订单退款申请接口)
-- [用户订单退款查询接口](#用户订单退款查询接口)
-- [分销商提现申请接口](#分销商提现申请接口)
-- [分销商提现确认到账接口](#分销商提现确认到账接口)
-- [分销商提现订单查询接口](#分销商提现订单查询接口)
 
+
+### 用户注册接口
+
+**接口地址**：http://119.23.248.130:8080/api/app/user/register
+
+#### 请求参数
+```javascript
+{
+    "mobile":"13777770000",
+   "password":"a123456",
+    "verifyCode":"666666"//手机验证码(前端验证先不不用填写)
+}
+```
+#### 响应参数
+```javascript
+{
+    "code":"0",//0表示成功
+    "msg":""
+}
+```
+
+### 用户登陆接口
+
+**接口地址**：http://119.23.248.130:8080/api/app/user/login
+
+#### 请求参数
+```javascript
+{
+    "mobile":"13777770000",
+    "passowrd":"666666"//用户密码
+}
+```
+#### 响应参数
+```javascript
+{
+   "code": 0,
+  "expire": 43200,//失效时间
+  "token": "f46501e02921cff81ec8bffcf5e22af0"
+}
+```
+
+### 用户登出接口
+
+**接口地址**：http://119.23.248.130:8080/api/app/user/logout
+
+#### 请求参数
+```javascript
+{
+    "token":"1"
+}
+```
+#### 响应参数
+```javascript
+{
+    "code":0,
+    "msg":""
+}
+```
+### 用户修改密码接口
+
+**接口地址**：http://119.23.248.130:8080/api/app/user/resetPassword
+
+#### 请求参数
+```javascript
+{
+    "password":"123456h",
+    "newPassword":"1sfsdf"
+}
+```
+#### 响应参数
+```javascript
+{
+ "code":0,
+  "msg":""
+}
+```
+###用户个人信息修改接口
+**接口地址**：http://119.23.248.130:8080/api/app/user/update
+
+#### 请求参数
+```javascript
+{
+	"token":"1111"，
+    "userName":"ppp"，    //用户名
+    "sex":"1",//性别 (1男性 0女性)
+    "birtyday":"1990-00-00",//生日
+    "email":"333@aa.com"//个人邮件
+}
+```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+    "msg":""
+}
+```
+###用户个人信息查询接口
+**接口地址**：http://119.23.248.130:8080/api/app/user/info
+
+#### 请求参数
+```javascript
+{
+    "token":"1111",
+}
+```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+    "msg":"",
+    "data":{
+     "userName":"ppp"，    //用户名
+    "sex":"1",//性别 (1男性 0女性)
+    "birtyday":"1990-00-00",//生日
+    "email":"333@aa.com"//个人邮件
+    }
+}
+```
 
 
 
@@ -111,10 +211,7 @@
 ```javascript
 {
     "code":"success",
-    "message":"",
-    "data":{
-   	 "money":"10.00"//账户余额（元）
-    }
+    "msg":""
 }
 ```
 
@@ -167,129 +264,175 @@
 
 ```
 
-### 用户注册接口
+### ID卡申请接口
 
-**接口地址**：http://119.23.248.130:8080/api/app/user/register
+**接口地址**：http://.../api/app/card/apply
 
 #### 请求参数
 ```javascript
 {
-    "mobile":"13777770000",
-   "password":"a123456",
-    "verifyCode":"666666"//手机验证码(前端验证先不不用填写)
+	"token":"1",    //用户token
+    "contactAddress":"江苏南京", //邮寄地址
+    "contactName":"张柳健",//联系姓名
+    "contactPhone":"13776540149",//联系电话
+    "idCard":"511323199009091111"//身份证号码
 }
 ```
 #### 响应参数
 ```javascript
 {
-    "code":"0",//0表示成功
+ 	"code":"success",
     "msg":""
 }
 ```
 
-### 用户登陆接口
+### ID卡申请记录接口
 
-**接口地址**：http://119.23.248.130:8080/api/app/user/login
+**接口地址**：http://.../api/app/card/applyinfo
 
 #### 请求参数
 ```javascript
-{
-    "mobile":"13777770000",
-    "passowrd":"666666"//用户密码
+{	"token":"1"    //用户token
 }
 ```
 #### 响应参数
 ```javascript
 {
-   "code": 0,
-  "expire": 43200,//失效时间
-  "token": "f46501e02921cff81ec8bffcf5e22af0"
+  "code": 0,
+  "data": {
+    "id": "2b6f4cdbd1a54de69cbd4a5302ce8f9d",
+    "contactName": "张柳健",
+    "contactPhone": "13776540149",
+    "contactAddress": "江苏南京",
+    "idCard": "511323199009091111",
+    "applyTime": "2017-07-25 21:49:13",
+    "updateTime": "2017-07-25 21:49:13",
+    "status": 0, //申请状态 0 提交申请 1审批失败 2 审批成功 
+    "applyUserId": 2 //申请用户id
+  }
 }
 ```
 
-### 用户登出接口
+### ID卡申请记录列表接口
 
-**接口地址**：http://119.23.248.130:8080/api/app/user/logout
+**接口地址**：http://.../api/app/card/applylist
 
 #### 请求参数
 ```javascript
-{
-    "token":"1"
+{	"token":"1"    //用户token
 }
 ```
 #### 响应参数
 ```javascript
 {
-    "code":0,
-    "msg":""
-}
-```
-### 用户修改密码接口
-
-**接口地址**：http://119.23.248.130:8080/api/app/user/resetPassword
-
-#### 请求参数
-```javascript
-{
-    "mobile":"13777770000",
-    "password":"123456h",
-    "newPassword":"1sfsdf"
-}
-```
-#### 响应参数
-```javascript
-{
- "code":0,
-  "msg":""
-}
-```
-###用户个人信息修改接口
-**接口地址**：http://119.23.248.130:8080/api/app/user/update
-
-#### 请求参数
-```javascript
-{
-	"token":"1111"，  
-    "userName":"ppp"，    //用户名
-    "sex":"1",//性别 (1男性 0女性)
-    "birtyday":"1990-00-00",//生日
-    "email":"333@aa.com"//个人邮件
-}
-```
-#### 响应参数
-```javascript
-{
-    "code": 0,
-    "msg":""
-}
-```
-###用户个人信息查询接口
-**接口地址**：http://119.23.248.130:8080/api/app/user/info
-
-#### 请求参数
-```javascript
-{
-    "token":"1111",
-}
-```
-#### 响应参数
-```javascript
-{
-    "code": 0,
-    "msg":"",
-    "data":{
-     "userName":"ppp"，    //用户名
-    "sex":"1",//性别 (1男性 0女性)
-    "birtyday":"1990-00-00",//生日
-    "email":"333@aa.com"//个人邮件
+  "code": 0,
+  "data": [
+    {
+      "id": "2b6f4cdbd1a54de69cbd4a5302ce8f9d",
+      "contactName": "张柳健",
+      "contactPhone": "13776540149",
+      "contactAddress": "江苏南京",
+      "idCard": "511323199009091111",
+      "applyTime": "2017-07-25 21:49:13",
+      "updateTime": "2017-07-25 21:49:13",
+      "status": 0,
+      "applyUserId": 2
+    },
+    {
+      "id": "1",
+      "contactName": "pengxiao",
+      "contactPhone": "13776540149",
+      "contactAddress": "nanjing",
+      "idCard": "5238819909034",
+      "applyTime": "2017-07-19 22:06:11",
+      "updateTime": "2017-07-19 22:06:11",
+      "status": 2,
+      "applyUserId": 2
     }
+  ]
 }
 ```
 
 
+### ID卡绑定接口
+
+**接口地址**：http://.../api/app/card/bind
+
+#### 请求参数
+```javascript
+{
+	 "token":"1111", //token
+    "code":"HH001", //卡号
+}
+```
+#### 响应参数
+```javascript
+{
+ 	"code":"0",
+    "msg":""
+}
+```
 
 
+### ID卡详情接口
 
+**接口地址**：http://.../api/app/card/info
+
+#### 请求参数
+```javascript
+{
+ 	"token":"1111", //token
+    "code":"HH001", //卡号
+}
+```
+#### 响应参数
+```javascript
+{
+    "code":0,
+    "data":{
+        "id":"db3b8e9e9fca408ba0192583f9a66512",
+        "userId":2,
+        "code":"SX0072", //卡号
+        "count":0, //剩余次数
+        "createTime":"2017-07-25 21:56:11",
+        "lastUseTime":null
+    }
+}
+```
+### ID卡使用记录接口
+
+**接口地址**：http://.../api/app/card/rechargerecord
+
+#### 请求参数
+```javascript
+{
+    "token":"1111", //token
+}
+```
+#### 响应参数
+```javascript
+{
+  "code": 0,
+  "data": {
+    "totalCount": 1,
+    "limit": 10,
+    "totalPage": 1,
+    "page": 1,
+    "list": [
+      {
+        "id": "1",
+        "userId": 2,
+        "code": "SX002",
+        "count": 10,
+        "type": 1,
+        "payType": "1",
+        "createTime": "2017-07-25 22:30:35",
+        "adjustCount": null
+      }
+    ]
+  }
+}
+```
 
 
 
