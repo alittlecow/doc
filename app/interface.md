@@ -123,7 +123,7 @@
 
 
 
-### 消费菜单接口（个人账户充值接口）
+### 消费菜单接口(商品查询接口)
 **接口地址**：http://.../api/app/goods/list
 
 #### 请求参数
@@ -156,13 +156,38 @@
   }
 }
 ```
-###  (账户充值  门店消费)订单生成接口
-**接口地址**：http://.../api/app/order/create
+###  (门店消费)订单生成接口
+**接口地址**：http://.../api/app/order/consumeorder
+
+#### 请求参数
+```javascript
+{
+    "token":"1" ,  //token
+}
+```
+#### 响应参数
+```javascript
+{
+    {
+  "code": 0,
+  "data": {
+    "orderId": "a9b1ae11cd544501a9505a0fa7ed1ab0"
+  }
+}
+}
+```
+
+
+###  (账户充值 ID卡充值)订单生成接口
+**接口地址**：http://.../api/app/order/rechargeorder
 
 #### 请求参数
 ```javascript
 {
     "goodsId":"1" ,  //商品id
+    "orderType" :"1" //订单类型 0 账户充值 1ID卡充值,
+    "code" :"HG001"  // ID卡号 （ID卡充值时填写）
+
 }
 ```
 #### 响应参数
@@ -407,6 +432,8 @@
 ```javascript
 {
     "token":"1111", //token
+     "page":"1",  //页码
+    "limit":"1"//每页数量
 }
 ```
 #### 响应参数
