@@ -460,6 +460,149 @@
   }
 }
 ```
+### 银行卡列表
+
+**接口地址**：http://.../userbankcard/list
+**根据的登录信息查询分页的银行卡列表
+#### 请求参数
+```javascript
+{
+  
+    "page":"1",  //页码
+    "limit":"1"//每页数量
+}
+```
+#### 响应参数
+```javascript
+{
+  "code": 0,
+  "page": {
+    "totalCount": 1,
+    "limit": 10,
+    "totalPage": 1,
+    "page": 1,
+    "list": [
+      {
+        "id": "1",
+        "status": 2,//状态预留字段
+        "userId": "SX002",//用户id
+        "bankFullName": "中国银行",//银行全名
+        "cardType": 1,//卡类型 DE代表借记卡，CR代表信用卡，其他值为非法
+        "accountType": "1",//账户类型 区分对公和对私 P代表私户，C代表公户，其他值为非法
+        "accountNo": "2017-07-25 22:30:35",//收款方的银行卡号
+        " accountName": null//收款方的姓名或者单位名
+      }
+    ]
+  }
+}
+```
+### 银行卡详情
+**接口地址**：http://.../userbankcard/info/{id}
+* 展示银行卡详情
+#### 请求参数
+```javascript
+{
+ 
+}
+```
+#### 响应参数
+```javascript
+{
+  "code": 0,
+  "page":
+  {
+        "id": "1",//银行卡id
+        "status": 2,//状态预留字段
+        "userId": "SX002",//用户id
+        "bankFullName": "中国银行",//银行全名
+        "cardType": "CR",//卡类型 DE代表借记卡，CR代表信用卡，其他值为非法
+        "accountType": "P",//账户类型 区分对公和对私 P代表私户，C代表公户，其他值为非法
+        "accountNo": "20170725223035",//收款方的银行卡号
+        "accountName": null//收款方的姓名或者单位名
+  }
+}
+```
+### 账户实名认证
+**接口地址**：http://.../accountinfo/auth
+* 用于账户实名认证
+#### 请求参数
+```javascript
+{
+        "idNo": "320113199807141310",//身份证号必填
+         "name":"王五",//真实姓名必填
+         "cardNo":"1234644",//银行卡号必填
+         "mobile":"13950721447"//手机号码选填
+}
+```
+#### 响应参数
+```javascript
+{
+  "code": 0,
+}
+```
+
+### 提现列表
+
+**接口地址**：http://.../accountenchashment/list
+**根据的登录信息查询分页的提现订单列表
+#### 请求参数
+```javascript
+{
+  
+    "page":"1",  //页码
+    "limit":"1"//每页数量
+}
+```
+#### 响应参数
+```javascript
+{
+  "code": 0,
+  "page": {
+    "totalCount": 1,
+    "limit": 10,
+    "totalPage": 1,
+    "page": 1,
+    "list": [
+      {
+        "id": "1",//提现订单主键
+        "status": 1,	//0提现中，1提现成功
+        "payAt":"2017-06-09 12:30:59",
+        "totalFee":"222",//int类型金额以分为单位的金额
+        "userId": "SX002",//用户id
+        "bankFullName": "中国银行",//银行全名
+        "cardType": "DE",//卡类型 DE代表借记卡，CR代表信用卡，其他值为非法
+        "accountType": "1",//账户类型 区分对公和对私 P代表私户，C代表公户，其他值为非法
+        "accountNo": "20170725223035",//收款方的银行卡号
+        "accountName": null//收款方的姓名或者单位名
+        "createAt": null//创建时间
+      }
+    ]
+  }
+}
+```
+### 新建提现订单
+
+**接口地址**：http://.../accountenchashment/save
+**根据的登录信息查询分页的提现订单列表
+#### 请求参数
+```javascript
+{
+        "totalFee":"222",//int类型金额以分为单位的金额
+        "userId": "SX002",//用户id
+        "bankFullName": "中国银行",//银行全名
+        "cardType": "DE",//卡类型 DE代表借记卡，CR代表信用卡，其他值为非法
+        "accountType": "1",//账户类型 区分对公和对私 P代表私户，C代表公户，其他值为非法
+        "accountNo": "20170725223035",//收款方的银行卡号
+        "accountName": null//收款方的姓名或者单位名
+}
+```
+#### 响应参数
+```javascript
+{
+  "code": 0
+}
+```
+
 
 
 
