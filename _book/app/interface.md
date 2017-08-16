@@ -31,7 +31,7 @@
 ```javascript
 {
     "mobile":"13777770000",
-    "password":"666666"//用户密码
+    "passowrd":"666666"//用户密码
 }
 ```
 #### 响应参数
@@ -56,30 +56,6 @@
 #### 响应参数
 ```javascript
 {
-    "code":0,
-    "msg":""
-}
-```
-### 找回密码接口
-
-**接口地址**：http://119.23.248.130:8080/api/app/user/getBackPassword
-
-#### 请求参数
-```javascript
-{
-    "password":"123456h",
-    "mobile":"13776540000"  //前端先进行短信校验
-}
-```
-#### 响应参数
-```javascript
-{
- "code":0,
-  "msg":""
-}
-```
-
-
     "code":0,
     "msg":""
 }
@@ -109,9 +85,9 @@
 ```javascript
 {
 	"token":"1111"，
-    "username":"ppp"，    //用户名
+    "userName":"ppp"，    //用户名
     "sex":"1",//性别 (1男性 0女性)
-    "birthday":"1990-00-00",//生日
+    "birtyday":"1990-00-00",//生日
     "email":"333@aa.com"//个人邮件
 }
 ```
@@ -137,7 +113,7 @@
     "code": 0,
     "msg":"",
     "data":{
-     "username":"ppp"，    //用户名
+     "userName":"ppp"，    //用户名
     "sex":"1",//性别 (1男性 0女性)
     "birtyday":"1990-00-00",//生日
     "email":"333@aa.com"//个人邮件
@@ -180,14 +156,13 @@
   }
 }
 ```
-###  门店消费订单生成接口
+###  (门店消费)订单生成接口
 **接口地址**：http://.../api/app/order/consumeorder
 
 #### 请求参数
 ```javascript
 {
     "token":"1" ,  //token
-    "deviceId" : "001"
 }
 ```
 #### 响应参数
@@ -203,39 +178,15 @@
 ```
 
 
-###  ID卡充值 订单生成接口
-**接口地址**：http://.../api/app/order/cardrecharge
+###  (账户充值 ID卡充值)订单生成接口
+**接口地址**：http://.../api/app/order/rechargeorder
 
 #### 请求参数
 ```javascript
 {
-    "goodsId":"3" ,  //商品id
-    "code":"0001"//充值卡号
-   
-
-}
-```
-#### 响应参数
-```javascript
-{
-    {
-  "code": 0,
-  "data": {
-    "orderId": "a9b1ae11cd544501a9505a0fa7ed1ab0"
-  }
-}
-}
-```
-
-
-###  账户充值 订单生成接口
-**接口地址**：http://.../api/app/order/accountrecharge
-
-#### 请求参数
-```javascript
-{
-    "goodsId":"2"   //商品id
-   
+    "goodsId":"1" ,  //商品id
+    "orderType" :"1" //订单类型 0 账户充值 1ID卡充值,
+    "code" :"HG001"  // ID卡号 （ID卡充值时填写）
 
 }
 ```
@@ -284,14 +235,8 @@
 #### 响应参数
 ```javascript
 {
-    "code": 0,
-    "data": {
-        "id": "1000002069833279",
-        "userId": 17,
-        "balance": 800,
-        "createTime": "2017-08-16 16:50:03",
-        "updateTime": "2017-08-16 18:36:20"
-    }
+    "code":"success",
+    "msg":""
 }
 ```
 
@@ -352,10 +297,10 @@
 ```javascript
 {
 	"token":"1",    //用户token
-    "contactAddress":"江苏南京", //邮寄地址
-    "contactName":"张柳健",//联系姓名
-    "contactPhone":"13776540149",//联系电话
-    "idCard":"511323199009091111"//身份证号码
+    "contactAddress":"江苏南京", //邮寄地址
+    "contactName":"张柳健",//联系姓名
+    "contactPhone":"13776540149",//联系电话
+    "idCard":"511323199009091111"//身份证号码
 }
 ```
 #### 响应参数
@@ -441,8 +386,8 @@
 #### 请求参数
 ```javascript
 {
-	 "token":"1111", //token
-    "code":"HH001", //卡号
+	 "token":"1111", //token
+    "code":"HH001", //卡号
 }
 ```
 #### 响应参数
@@ -461,22 +406,22 @@
 #### 请求参数
 ```javascript
 {
- 	"token":"1111", //token
-    "code":"HH001", //卡号
+ 	"token":"1111", //token
+    "code":"HH001", //卡号
 }
 ```
 #### 响应参数
 ```javascript
 {
-    "code":0,
-    "data":{
-        "id":"db3b8e9e9fca408ba0192583f9a66512",
-        "userId":2,
-        "code":"SX0072", //卡号
-        "count":0, //剩余次数
-        "createTime":"2017-07-25 21:56:11",
-        "lastUseTime":null
-    }
+    "code":0,
+    "data":{
+        "id":"db3b8e9e9fca408ba0192583f9a66512",
+        "userId":2,
+        "code":"SX0072", //卡号
+        "count":0, //剩余次数
+        "createTime":"2017-07-25 21:56:11",
+        "lastUseTime":null
+    }
 }
 ```
 ### ID卡使用记录接口
@@ -486,7 +431,7 @@
 #### 请求参数
 ```javascript
 {
-    "token":"1111", //token
+    "token":"1111", //token
      "page":"1",  //页码
     "limit":"1"//每页数量
 }
@@ -515,149 +460,6 @@
   }
 }
 ```
-### 银行卡列表
-
-**接口地址**：http://.../userbankcard/list
-**根据的登录信息查询分页的银行卡列表
-#### 请求参数
-```javascript
-{
-  
-    "page":"1",  //页码
-    "limit":"1"//每页数量
-}
-```
-#### 响应参数
-```javascript
-{
-  "code": 0,
-  "page": {
-    "totalCount": 1,
-    "limit": 10,
-    "totalPage": 1,
-    "page": 1,
-    "list": [
-      {
-        "id": "1",
-        "status": 2,//状态预留字段
-        "userId": "SX002",//用户id
-        "bankFullName": "中国银行",//银行全名
-        "cardType": 1,//卡类型 DE代表借记卡，CR代表信用卡，其他值为非法
-        "accountType": "1",//账户类型 区分对公和对私 P代表私户，C代表公户，其他值为非法
-        "accountNo": "2017-07-25 22:30:35",//收款方的银行卡号
-        " accountName": null//收款方的姓名或者单位名
-      }
-    ]
-  }
-}
-```
-### 银行卡详情
-**接口地址**：http://.../userbankcard/info/{id}
-* 展示银行卡详情
-#### 请求参数
-```javascript
-{
- 
-}
-```
-#### 响应参数
-```javascript
-{
-  "code": 0,
-  "page":
-  {
-        "id": "1",//银行卡id
-        "status": 2,//状态预留字段
-        "userId": "SX002",//用户id
-        "bankFullName": "中国银行",//银行全名
-        "cardType": "CR",//卡类型 DE代表借记卡，CR代表信用卡，其他值为非法
-        "accountType": "P",//账户类型 区分对公和对私 P代表私户，C代表公户，其他值为非法
-        "accountNo": "20170725223035",//收款方的银行卡号
-        "accountName": null//收款方的姓名或者单位名
-  }
-}
-```
-### 账户实名认证
-**接口地址**：http://.../accountinfo/auth
-* 用于账户实名认证
-#### 请求参数
-```javascript
-{
-        "idNo": "320113199807141310",//身份证号必填
-         "name":"王五",//真实姓名必填
-         "cardNo":"1234644",//银行卡号必填
-         "mobile":"13950721447"//手机号码选填
-}
-```
-#### 响应参数
-```javascript
-{
-  "code": 0,
-}
-```
-
-### 提现列表
-
-**接口地址**：http://.../accountenchashment/list
-**根据的登录信息查询分页的提现订单列表
-#### 请求参数
-```javascript
-{
-  
-    "page":"1",  //页码
-    "limit":"1"//每页数量
-}
-```
-#### 响应参数
-```javascript
-{
-  "code": 0,
-  "page": {
-    "totalCount": 1,
-    "limit": 10,
-    "totalPage": 1,
-    "page": 1,
-    "list": [
-      {
-        "id": "1",//提现订单主键
-        "status": 1,	//0提现中，1提现成功
-        "payAt":"2017-06-09 12:30:59",
-        "totalFee":"222",//int类型金额以分为单位的金额
-        "userId": "SX002",//用户id
-        "bankFullName": "中国银行",//银行全名
-        "cardType": "DE",//卡类型 DE代表借记卡，CR代表信用卡，其他值为非法
-        "accountType": "1",//账户类型 区分对公和对私 P代表私户，C代表公户，其他值为非法
-        "accountNo": "20170725223035",//收款方的银行卡号
-        "accountName": null//收款方的姓名或者单位名
-        "createAt": null//创建时间
-      }
-    ]
-  }
-}
-```
-### 新建提现订单
-
-**接口地址**：http://.../accountenchashment/save
-**根据的登录信息查询分页的提现订单列表
-#### 请求参数
-```javascript
-{
-        "totalFee":"222",//int类型金额以分为单位的金额
-        "userId": "SX002",//用户id
-        "bankFullName": "中国银行",//银行全名
-        "cardType": "DE",//卡类型 DE代表借记卡，CR代表信用卡，其他值为非法
-        "accountType": "1",//账户类型 区分对公和对私 P代表私户，C代表公户，其他值为非法
-        "accountNo": "20170725223035",//收款方的银行卡号
-        "accountName": null//收款方的姓名或者单位名
-}
-```
-#### 响应参数
-```javascript
-{
-  "code": 0
-}
-```
-
 
 
 

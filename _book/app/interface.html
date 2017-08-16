@@ -1,0 +1,655 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>app接口文档 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="web.md" />
+    
+    
+    <link rel="prev" href="../database.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../database.html">
+            
+                <a href="../database.html">
+            
+                    
+                    数据库设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="interface.html">
+            
+                <a href="interface.html">
+            
+                    
+                    app接口文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="web.md">
+            
+                <span>
+            
+                    
+                    web接口文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../flowchart/flowchart.html">
+            
+                <a href="../flowchart/flowchart.html">
+            
+                    
+                    流程图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >app接口文档</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x7528;&#x6237;&#x6CE8;&#x518C;&#x63A5;&#x53E3;">&#x7528;&#x6237;&#x6CE8;&#x518C;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://119.23.248.130:8080/api/app/user/register" target="_blank">http://119.23.248.130:8080/api/app/user/register</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;mobile&quot;</span>:<span class="hljs-string">&quot;13777770000&quot;</span>,
+   <span class="hljs-string">&quot;password&quot;</span>:<span class="hljs-string">&quot;a123456&quot;</span>,
+    <span class="hljs-string">&quot;verifyCode&quot;</span>:<span class="hljs-string">&quot;666666&quot;</span><span class="hljs-comment">//&#x624B;&#x673A;&#x9A8C;&#x8BC1;&#x7801;(&#x524D;&#x7AEF;&#x9A8C;&#x8BC1;&#x5148;&#x4E0D;&#x4E0D;&#x7528;&#x586B;&#x5199;)</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>,<span class="hljs-comment">//0&#x8868;&#x793A;&#x6210;&#x529F;</span>
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>
+}
+</code></pre>
+<h3 id="&#x7528;&#x6237;&#x767B;&#x9646;&#x63A5;&#x53E3;">&#x7528;&#x6237;&#x767B;&#x9646;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://119.23.248.130:8080/api/app/user/login" target="_blank">http://119.23.248.130:8080/api/app/user/login</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;mobile&quot;</span>:<span class="hljs-string">&quot;13777770000&quot;</span>,
+    <span class="hljs-string">&quot;passowrd&quot;</span>:<span class="hljs-string">&quot;666666&quot;</span><span class="hljs-comment">//&#x7528;&#x6237;&#x5BC6;&#x7801;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+   <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;expire&quot;</span>: <span class="hljs-number">43200</span>,<span class="hljs-comment">//&#x5931;&#x6548;&#x65F6;&#x95F4;</span>
+  <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;f46501e02921cff81ec8bffcf5e22af0&quot;</span>
+}
+</code></pre>
+<h3 id="&#x7528;&#x6237;&#x767B;&#x51FA;&#x63A5;&#x53E3;">&#x7528;&#x6237;&#x767B;&#x51FA;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://119.23.248.130:8080/api/app/user/logout" target="_blank">http://119.23.248.130:8080/api/app/user/logout</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>
+}
+</code></pre>
+<h3 id="&#x7528;&#x6237;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x63A5;&#x53E3;">&#x7528;&#x6237;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://119.23.248.130:8080/api/app/user/resetPassword" target="_blank">http://119.23.248.130:8080/api/app/user/resetPassword</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;password&quot;</span>:<span class="hljs-string">&quot;123456h&quot;</span>,
+    <span class="hljs-string">&quot;newPassword&quot;</span>:<span class="hljs-string">&quot;1sfsdf&quot;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+ <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>
+}
+</code></pre>
+<h3 id="&#x7528;&#x6237;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x4FEE;&#x6539;&#x63A5;&#x53E3;">&#x7528;&#x6237;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x4FEE;&#x6539;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://119.23.248.130:8080/api/app/user/update" target="_blank">http://119.23.248.130:8080/api/app/user/update</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1111&quot;</span>&#xFF0C;
+    <span class="hljs-string">&quot;userName&quot;</span>:<span class="hljs-string">&quot;ppp&quot;</span>&#xFF0C;    <span class="hljs-comment">//&#x7528;&#x6237;&#x540D;</span>
+    <span class="hljs-string">&quot;sex&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-comment">//&#x6027;&#x522B; (1&#x7537;&#x6027; 0&#x5973;&#x6027;)</span>
+    <span class="hljs-string">&quot;birtyday&quot;</span>:<span class="hljs-string">&quot;1990-00-00&quot;</span>,<span class="hljs-comment">//&#x751F;&#x65E5;</span>
+    <span class="hljs-string">&quot;email&quot;</span>:<span class="hljs-string">&quot;333@aa.com&quot;</span><span class="hljs-comment">//&#x4E2A;&#x4EBA;&#x90AE;&#x4EF6;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>
+}
+</code></pre>
+<h3 id="&#x7528;&#x6237;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;">&#x7528;&#x6237;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://119.23.248.130:8080/api/app/user/info" target="_blank">http://119.23.248.130:8080/api/app/user/info</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1111&quot;</span>,
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;data&quot;</span>:{
+     <span class="hljs-string">&quot;userName&quot;</span>:<span class="hljs-string">&quot;ppp&quot;</span>&#xFF0C;    <span class="hljs-comment">//&#x7528;&#x6237;&#x540D;</span>
+    <span class="hljs-string">&quot;sex&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,<span class="hljs-comment">//&#x6027;&#x522B; (1&#x7537;&#x6027; 0&#x5973;&#x6027;)</span>
+    <span class="hljs-string">&quot;birtyday&quot;</span>:<span class="hljs-string">&quot;1990-00-00&quot;</span>,<span class="hljs-comment">//&#x751F;&#x65E5;</span>
+    <span class="hljs-string">&quot;email&quot;</span>:<span class="hljs-string">&quot;333@aa.com&quot;</span><span class="hljs-comment">//&#x4E2A;&#x4EBA;&#x90AE;&#x4EF6;</span>
+    }
+}
+</code></pre>
+<h3 id="&#x6D88;&#x8D39;&#x83DC;&#x5355;&#x63A5;&#x53E3;&#x5546;&#x54C1;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;">&#x6D88;&#x8D39;&#x83DC;&#x5355;&#x63A5;&#x53E3;(&#x5546;&#x54C1;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;)</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/goods/list" target="_blank">http://.../api/app/goods/list</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,   <span class="hljs-comment">//&#x5546;&#x54C1;&#x7C7B;&#x578B; 1&#x8BBE;&#x5907;&#x4F7F;&#x7528;&#x6B21;&#x6570;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x6B21; ID&#x5361;&#x5145;&#x503C;&#x548C;&#x95E8;&#x5E97;&#x6D88;&#x8D39;&#x65F6;&#x4F7F;&#x7528;&#xFF09;2&#x8D26;&#x6237;&#x5145;&#x503C;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x5143;</span>
+    <span class="hljs-string">&quot;page&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,  <span class="hljs-comment">//&#x9875;&#x7801;</span>
+    <span class="hljs-string">&quot;limit&quot;</span>:<span class="hljs-string">&quot;1&quot;</span><span class="hljs-comment">//&#x6BCF;&#x9875;&#x6570;&#x91CF;</span>
+
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+         <span class="hljs-string">&quot;data&quot;</span>: {
+        <span class="hljs-string">&quot;totalCount&quot;</span>: <span class="hljs-number">2</span>,  <span class="hljs-comment">//&#x603B;&#x6570;&#x91CF;</span>
+        <span class="hljs-string">&quot;limit&quot;</span>: <span class="hljs-number">1</span>,            <span class="hljs-comment">//&#x6BCF;&#x9875;&#x6570;&#x91CF;</span>
+        <span class="hljs-string">&quot;totalPage&quot;</span>: <span class="hljs-number">2</span>,  <span class="hljs-comment">//&#x603B;&#x9875;&#x6570;</span>
+        <span class="hljs-string">&quot;page&quot;</span>: <span class="hljs-number">2</span>,   <span class="hljs-comment">//&#x5F53;&#x524D;&#x9875;&#x7801;</span>
+        <span class="hljs-string">&quot;list&quot;</span>: [
+          {
+            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;38fea234d4a74742a37a1bfd2e2d99a6&quot;</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;10&#x6B21; 50&#x5143;&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>,
+            <span class="hljs-string">&quot;money&quot;</span>: <span class="hljs-number">50</span>
+          }
+        ]
+  }
+}
+</code></pre>
+<h3 id="&#x95E8;&#x5E97;&#x6D88;&#x8D39;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x63A5;&#x53E3;">(&#x95E8;&#x5E97;&#x6D88;&#x8D39;)&#x8BA2;&#x5355;&#x751F;&#x6210;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/order/consumeorder" target="_blank">http://.../api/app/order/consumeorder</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1&quot;</span> ,  <span class="hljs-comment">//token</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    {
+  <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;data&quot;</span>: {
+    <span class="hljs-string">&quot;orderId&quot;</span>: <span class="hljs-string">&quot;a9b1ae11cd544501a9505a0fa7ed1ab0&quot;</span>
+  }
+}
+}
+</code></pre>
+<h3 id="&#x8D26;&#x6237;&#x5145;&#x503C;-id&#x5361;&#x5145;&#x503C;&#x8BA2;&#x5355;&#x751F;&#x6210;&#x63A5;&#x53E3;">(&#x8D26;&#x6237;&#x5145;&#x503C; ID&#x5361;&#x5145;&#x503C;)&#x8BA2;&#x5355;&#x751F;&#x6210;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/order/rechargeorder" target="_blank">http://.../api/app/order/rechargeorder</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;goodsId&quot;</span>:<span class="hljs-string">&quot;1&quot;</span> ,  <span class="hljs-comment">//&#x5546;&#x54C1;id</span>
+    <span class="hljs-string">&quot;orderType&quot;</span> :<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-comment">//&#x8BA2;&#x5355;&#x7C7B;&#x578B; 0 &#x8D26;&#x6237;&#x5145;&#x503C; 1ID&#x5361;&#x5145;&#x503C;,</span>
+    <span class="hljs-string">&quot;code&quot;</span> :<span class="hljs-string">&quot;HG001&quot;</span>  <span class="hljs-comment">// ID&#x5361;&#x53F7; &#xFF08;ID&#x5361;&#x5145;&#x503C;&#x65F6;&#x586B;&#x5199;&#xFF09;</span>
+
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    {
+  <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;data&quot;</span>: {
+    <span class="hljs-string">&quot;orderId&quot;</span>: <span class="hljs-string">&quot;a9b1ae11cd544501a9505a0fa7ed1ab0&quot;</span>
+  }
+}
+}
+</code></pre>
+<h3 id="&#x4E2A;&#x4EBA;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x652F;&#x4ED8;&#x63A5;&#x53E3;">&#x4E2A;&#x4EBA;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x652F;&#x4ED8;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/account/pay" target="_blank">http://.../api/app/account/pay</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;orderId&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>    <span class="hljs-comment">//&#x8BA2;&#x5355;id,</span>
+     <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,    <span class="hljs-comment">//&#x7528;&#x6237;token</span>
+
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>
+    }
+}
+</code></pre>
+<h3 id="&#x4E2A;&#x4EBA;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;">&#x4E2A;&#x4EBA;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../app/api/account/info" target="_blank">http://.../app/api/account/info</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+     <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,    <span class="hljs-comment">//&#x7528;&#x6237;token</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;success&quot;</span>,
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>
+}
+</code></pre>
+<h3 id="&#x4E2A;&#x4EBA;&#x8D26;&#x6237;&#x6D41;&#x6C34;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;">&#x4E2A;&#x4EBA;&#x8D26;&#x6237;&#x6D41;&#x6C34;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/account/history" target="_blank">http://.../api/app/account/history</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,    <span class="hljs-comment">//&#x7528;&#x6237;token</span>
+    <span class="hljs-string">&quot;beginTime&quot;</span>:<span class="hljs-string">&quot;2017-07-07 00:00:00&quot;</span>    <span class="hljs-comment">//&#x67E5;&#x8BE2;&#x5F00;&#x59CB;&#x65F6;&#x95F4;,</span>
+    <span class="hljs-string">&quot;endTime&quot;</span>:<span class="hljs-string">&quot;2017-07-07 00:00:00&quot;</span>    <span class="hljs-comment">//&#x67E5;&#x8BE2;&#x7ED3;&#x675F;&#x65F6;&#x95F4;&#xFF0C;</span>
+    <span class="hljs-string">&quot;page&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,  <span class="hljs-comment">//&#x9875;&#x7801;</span>
+    <span class="hljs-string">&quot;limit&quot;</span>:<span class="hljs-string">&quot;1&quot;</span><span class="hljs-comment">//&#x6BCF;&#x9875;&#x6570;&#x91CF;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;data&quot;</span>: {
+    <span class="hljs-string">&quot;totalCount&quot;</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">&quot;limit&quot;</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-string">&quot;totalPage&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;page&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;list&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;75c25b2e50eb4b42b3575d104142e39e&quot;</span>,
+        <span class="hljs-string">&quot;accountId&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>,
+        <span class="hljs-string">&quot;beforeAdjustMoney&quot;</span>: <span class="hljs-number">9748.85</span>,
+        <span class="hljs-string">&quot;adjustMoney&quot;</span>: <span class="hljs-number">-50.23</span>,
+        <span class="hljs-string">&quot;afterAdjustMoney&quot;</span>: <span class="hljs-number">9698.62</span>,
+        <span class="hljs-string">&quot;adjustType&quot;</span>: <span class="hljs-number">0</span>,<span class="hljs-comment">//&#x8C03;&#x6574;&#x7C7B;&#x578B;&#xFF08;0&#x7528;&#x6237;&#x5145;&#x503C;  1&#x7528;&#x6237;&#x6D88;&#x8D39;  2&#x5206;&#x6210;&#x7ED3;&#x7B97; 3&#x63D0;&#x73B0;&#xFF09;</span>
+        <span class="hljs-string">&quot;createTime&quot;</span>: <span class="hljs-string">&quot;2017-07-15 00:21:02&quot;</span>,
+        <span class="hljs-string">&quot;orderId&quot;</span>: <span class="hljs-string">&quot;bb8e5a91dd3c4ffbbb16325d309d5c8c&quot;</span>
+      },
+      {
+        <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;1f80b02a114044bfa1f2f114c9366905&quot;</span>,
+        <span class="hljs-string">&quot;accountId&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>,
+        <span class="hljs-string">&quot;beforeAdjustMoney&quot;</span>: <span class="hljs-number">9799.08</span>,
+        <span class="hljs-string">&quot;adjustMoney&quot;</span>: <span class="hljs-number">-50.23</span>,
+        <span class="hljs-string">&quot;afterAdjustMoney&quot;</span>: <span class="hljs-number">9748.85</span>,
+        <span class="hljs-string">&quot;adjustType&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;createTime&quot;</span>: <span class="hljs-string">&quot;2017-07-15 00:19:36&quot;</span>,
+        <span class="hljs-string">&quot;orderId&quot;</span>: <span class="hljs-string">&quot;bb8e5a91dd3c4ffbbb16325d309d5c8c&quot;</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<h3 id="id&#x5361;&#x7533;&#x8BF7;&#x63A5;&#x53E3;">ID&#x5361;&#x7533;&#x8BF7;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/card/apply" target="_blank">http://.../api/app/card/apply</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,    <span class="hljs-comment">//&#x7528;&#x6237;token</span>
+    <span class="hljs-string">&quot;contactAddress&quot;</span>:<span class="hljs-string">&quot;&#x6C5F;&#x82CF;&#x5357;&#x4EAC;&quot;</span>, <span class="hljs-comment">//&#x90AE;&#x5BC4;&#x5730;&#x5740;</span>
+    <span class="hljs-string">&quot;contactName&quot;</span>:<span class="hljs-string">&quot;&#x5F20;&#x67F3;&#x5065;&quot;</span>,<span class="hljs-comment">//&#x8054;&#x7CFB;&#x59D3;&#x540D;</span>
+    <span class="hljs-string">&quot;contactPhone&quot;</span>:<span class="hljs-string">&quot;13776540149&quot;</span>,<span class="hljs-comment">//&#x8054;&#x7CFB;&#x7535;&#x8BDD;</span>
+    <span class="hljs-string">&quot;idCard&quot;</span>:<span class="hljs-string">&quot;511323199009091111&quot;</span><span class="hljs-comment">//&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+     <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;success&quot;</span>,
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>
+}
+</code></pre>
+<h3 id="id&#x5361;&#x7533;&#x8BF7;&#x8BB0;&#x5F55;&#x63A5;&#x53E3;">ID&#x5361;&#x7533;&#x8BF7;&#x8BB0;&#x5F55;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/card/applyinfo" target="_blank">http://.../api/app/card/applyinfo</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>    <span class="hljs-comment">//&#x7528;&#x6237;token</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;data&quot;</span>: {
+    <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;2b6f4cdbd1a54de69cbd4a5302ce8f9d&quot;</span>,
+    <span class="hljs-string">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;&#x5F20;&#x67F3;&#x5065;&quot;</span>,
+    <span class="hljs-string">&quot;contactPhone&quot;</span>: <span class="hljs-string">&quot;13776540149&quot;</span>,
+    <span class="hljs-string">&quot;contactAddress&quot;</span>: <span class="hljs-string">&quot;&#x6C5F;&#x82CF;&#x5357;&#x4EAC;&quot;</span>,
+    <span class="hljs-string">&quot;idCard&quot;</span>: <span class="hljs-string">&quot;511323199009091111&quot;</span>,
+    <span class="hljs-string">&quot;applyTime&quot;</span>: <span class="hljs-string">&quot;2017-07-25 21:49:13&quot;</span>,
+    <span class="hljs-string">&quot;updateTime&quot;</span>: <span class="hljs-string">&quot;2017-07-25 21:49:13&quot;</span>,
+    <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">//&#x7533;&#x8BF7;&#x72B6;&#x6001; 0 &#x63D0;&#x4EA4;&#x7533;&#x8BF7; 1&#x5BA1;&#x6279;&#x5931;&#x8D25; 2 &#x5BA1;&#x6279;&#x6210;&#x529F; </span>
+    <span class="hljs-string">&quot;applyUserId&quot;</span>: <span class="hljs-number">2</span> <span class="hljs-comment">//&#x7533;&#x8BF7;&#x7528;&#x6237;id</span>
+  }
+}
+</code></pre>
+<h3 id="id&#x5361;&#x7533;&#x8BF7;&#x8BB0;&#x5F55;&#x5217;&#x8868;&#x63A5;&#x53E3;">ID&#x5361;&#x7533;&#x8BF7;&#x8BB0;&#x5F55;&#x5217;&#x8868;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/card/applylist" target="_blank">http://.../api/app/card/applylist</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>    <span class="hljs-comment">//&#x7528;&#x6237;token</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;2b6f4cdbd1a54de69cbd4a5302ce8f9d&quot;</span>,
+      <span class="hljs-string">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;&#x5F20;&#x67F3;&#x5065;&quot;</span>,
+      <span class="hljs-string">&quot;contactPhone&quot;</span>: <span class="hljs-string">&quot;13776540149&quot;</span>,
+      <span class="hljs-string">&quot;contactAddress&quot;</span>: <span class="hljs-string">&quot;&#x6C5F;&#x82CF;&#x5357;&#x4EAC;&quot;</span>,
+      <span class="hljs-string">&quot;idCard&quot;</span>: <span class="hljs-string">&quot;511323199009091111&quot;</span>,
+      <span class="hljs-string">&quot;applyTime&quot;</span>: <span class="hljs-string">&quot;2017-07-25 21:49:13&quot;</span>,
+      <span class="hljs-string">&quot;updateTime&quot;</span>: <span class="hljs-string">&quot;2017-07-25 21:49:13&quot;</span>,
+      <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;applyUserId&quot;</span>: <span class="hljs-number">2</span>
+    },
+    {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>,
+      <span class="hljs-string">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;pengxiao&quot;</span>,
+      <span class="hljs-string">&quot;contactPhone&quot;</span>: <span class="hljs-string">&quot;13776540149&quot;</span>,
+      <span class="hljs-string">&quot;contactAddress&quot;</span>: <span class="hljs-string">&quot;nanjing&quot;</span>,
+      <span class="hljs-string">&quot;idCard&quot;</span>: <span class="hljs-string">&quot;5238819909034&quot;</span>,
+      <span class="hljs-string">&quot;applyTime&quot;</span>: <span class="hljs-string">&quot;2017-07-19 22:06:11&quot;</span>,
+      <span class="hljs-string">&quot;updateTime&quot;</span>: <span class="hljs-string">&quot;2017-07-19 22:06:11&quot;</span>,
+      <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-string">&quot;applyUserId&quot;</span>: <span class="hljs-number">2</span>
+    }
+  ]
+}
+</code></pre>
+<h3 id="id&#x5361;&#x7ED1;&#x5B9A;&#x63A5;&#x53E3;">ID&#x5361;&#x7ED1;&#x5B9A;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/card/bind" target="_blank">http://.../api/app/card/bind</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+     <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1111&quot;</span>, <span class="hljs-comment">//token</span>
+    <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;HH001&quot;</span>, <span class="hljs-comment">//&#x5361;&#x53F7;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+     <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;0&quot;</span>,
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&quot;</span>
+}
+</code></pre>
+<h3 id="id&#x5361;&#x8BE6;&#x60C5;&#x63A5;&#x53E3;">ID&#x5361;&#x8BE6;&#x60C5;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/card/info" target="_blank">http://.../api/app/card/info</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+     <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1111&quot;</span>, <span class="hljs-comment">//token</span>
+    <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;HH001&quot;</span>, <span class="hljs-comment">//&#x5361;&#x53F7;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;data&quot;</span>:{
+        <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;db3b8e9e9fca408ba0192583f9a66512&quot;</span>,
+        <span class="hljs-string">&quot;userId&quot;</span>:<span class="hljs-number">2</span>,
+        <span class="hljs-string">&quot;code&quot;</span>:<span class="hljs-string">&quot;SX0072&quot;</span>, <span class="hljs-comment">//&#x5361;&#x53F7;</span>
+        <span class="hljs-string">&quot;count&quot;</span>:<span class="hljs-number">0</span>, <span class="hljs-comment">//&#x5269;&#x4F59;&#x6B21;&#x6570;</span>
+        <span class="hljs-string">&quot;createTime&quot;</span>:<span class="hljs-string">&quot;2017-07-25 21:56:11&quot;</span>,
+        <span class="hljs-string">&quot;lastUseTime&quot;</span>:<span class="hljs-literal">null</span>
+    }
+}
+</code></pre>
+<h3 id="id&#x5361;&#x4F7F;&#x7528;&#x8BB0;&#x5F55;&#x63A5;&#x53E3;">ID&#x5361;&#x4F7F;&#x7528;&#x8BB0;&#x5F55;&#x63A5;&#x53E3;</h3>
+<p><strong>&#x63A5;&#x53E3;&#x5730;&#x5740;</strong>&#xFF1A;<a href="http://.../api/app/card/rechargerecord" target="_blank">http://.../api/app/card/rechargerecord</a></p>
+<h4 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;token&quot;</span>:<span class="hljs-string">&quot;1111&quot;</span>, <span class="hljs-comment">//token</span>
+     <span class="hljs-string">&quot;page&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>,  <span class="hljs-comment">//&#x9875;&#x7801;</span>
+    <span class="hljs-string">&quot;limit&quot;</span>:<span class="hljs-string">&quot;1&quot;</span><span class="hljs-comment">//&#x6BCF;&#x9875;&#x6570;&#x91CF;</span>
+}
+</code></pre>
+<h4 id="&#x54CD;&#x5E94;&#x53C2;&#x6570;">&#x54CD;&#x5E94;&#x53C2;&#x6570;</h4>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;data&quot;</span>: {
+    <span class="hljs-string">&quot;totalCount&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;limit&quot;</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-string">&quot;totalPage&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;page&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;list&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>,
+        <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">&quot;code&quot;</span>: <span class="hljs-string">&quot;SX002&quot;</span>,
+        <span class="hljs-string">&quot;count&quot;</span>: <span class="hljs-number">10</span>,
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;payType&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>,
+        <span class="hljs-string">&quot;createTime&quot;</span>: <span class="hljs-string">&quot;2017-07-25 22:30:35&quot;</span>,
+        <span class="hljs-string">&quot;adjustCount&quot;</span>: <span class="hljs-literal">null</span>
+      }
+    ]
+  }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../database.html" class="navigation navigation-prev " aria-label="Previous page: 数据库设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="web.md" class="navigation navigation-next " aria-label="Next page: web接口文档">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"app接口文档","level":"1.3","depth":1,"next":{"title":"web接口文档","level":"1.4","depth":1,"path":"app/web.md","ref":"app/web.md","articles":[]},"previous":{"title":"数据库设计","level":"1.2","depth":1,"path":"database.md","ref":"database.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"app/interface.md","mtime":"2017-07-26T04:35:13.440Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-12T12:26:48.153Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
