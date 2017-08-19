@@ -324,7 +324,7 @@
         "beforeAdjustMoney": 9748.85,
         "adjustMoney": -50.23,
         "afterAdjustMoney": 9698.62,
-        "adjustType": 0,//调整类型（0用户充值  1用户消费  2分成结算 3提现）
+        "adjustType": 0,//调整类型（10用户充值  11 分成结算  20 ID卡充值 21 使用设备  22 提现）
         "createTime": "2017-07-15 00:21:02",
         "orderId": "bb8e5a91dd3c4ffbbb16325d309d5c8c"
       },
@@ -344,94 +344,7 @@
 
 ```
 
-### ID卡申请接口
 
-**接口地址**：http://.../api/app/card/apply
-
-#### 请求参数
-```javascript
-{
-	"token":"1",    //用户token
-    "contactAddress":"江苏南京", //邮寄地址
-    "contactName":"张柳健",//联系姓名
-    "contactPhone":"13776540149",//联系电话
-    "idCard":"511323199009091111"//身份证号码
-}
-```
-#### 响应参数
-```javascript
-{
- 	"code":"success",
-    "msg":""
-}
-```
-
-### ID卡申请记录接口
-
-**接口地址**：http://.../api/app/card/applyinfo
-
-#### 请求参数
-```javascript
-{	"token":"1"    //用户token
-}
-```
-#### 响应参数
-```javascript
-{
-  "code": 0,
-  "data": {
-    "id": "2b6f4cdbd1a54de69cbd4a5302ce8f9d",
-    "contactName": "张柳健",
-    "contactPhone": "13776540149",
-    "contactAddress": "江苏南京",
-    "idCard": "511323199009091111",
-    "applyTime": "2017-07-25 21:49:13",
-    "updateTime": "2017-07-25 21:49:13",
-    "status": 0, //申请状态 0 提交申请 1审批失败 2 审批成功 
-    "applyUserId": 2 //申请用户id
-  }
-}
-```
-
-### ID卡申请记录列表接口
-
-**接口地址**：http://.../api/app/card/applylist
-
-#### 请求参数
-```javascript
-{	"token":"1"    //用户token
-}
-```
-#### 响应参数
-```javascript
-{
-  "code": 0,
-  "data": [
-    {
-      "id": "2b6f4cdbd1a54de69cbd4a5302ce8f9d",
-      "contactName": "张柳健",
-      "contactPhone": "13776540149",
-      "contactAddress": "江苏南京",
-      "idCard": "511323199009091111",
-      "applyTime": "2017-07-25 21:49:13",
-      "updateTime": "2017-07-25 21:49:13",
-      "status": 0,
-      "applyUserId": 2
-    },
-    {
-      "id": "1",
-      "contactName": "pengxiao",
-      "contactPhone": "13776540149",
-      "contactAddress": "nanjing",
-      "idCard": "5238819909034",
-      "applyTime": "2017-07-19 22:06:11",
-      "updateTime": "2017-07-19 22:06:11",
-      "status": 2,
-      "applyUserId": 2
-    }
-  ]
-}
-```
 
 
 ### ID卡绑定接口
@@ -441,8 +354,10 @@
 #### 请求参数
 ```javascript
 {
-	 "token":"1111", //token
-    "code":"HH001", //卡号
+	 
+   "code" : "001", //卡号码
+	"cardHoldName":"pengxiao2", //持卡人姓名
+	"cardHoldPhone" : "13776540148" //持卡人姓名
 }
 ```
 #### 响应参数
@@ -486,7 +401,9 @@
 #### 请求参数
 ```javascript
 {
-    "token":"1111", //token
+    "code":"001",
+	"startTime":"2017-07-01", //开始时间
+	"endTime":"2017-09-01"  //结束时间
      "page":"1",  //页码
     "limit":"1"//每页数量
 }
@@ -503,11 +420,11 @@
     "list": [
       {
         "id": "1",
-        "userId": 2,
-        "code": "SX002",
+       
+        "code": "001",
         "count": 10,
-        "type": 1,
-        "payType": "1",
+        "type": 1, //1设备使用 2充值 
+        "payType": "1", //0支付宝 1微信 2银联 3个人账户
         "createTime": "2017-07-25 22:30:35",
         "adjustCount": null
       }
