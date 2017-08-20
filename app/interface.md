@@ -301,6 +301,7 @@
 #### 请求参数
 ```javascript
 {
+
     "token":"1",    //用户token
     "beginTime":"2017-07-07 00:00:00"    //查询开始时间,
     "endTime":"2017-07-07 00:00:00"    //查询结束时间，
@@ -311,64 +312,78 @@
 #### 响应参数
 ```javascript
 {
-  "code": 0,
-  "data": {
-    "totalCount": 2,
-    "limit": 10,
-    "totalPage": 1,
-    "page": 1,
-    "list": [
-      {
-        "id": "75c25b2e50eb4b42b3575d104142e39e",
-        "accountId": "2",
-        "beforeAdjustMoney": 9748.85,
-        "adjustMoney": -50.23,
-        "afterAdjustMoney": 9698.62,
-        "adjustType": 0,//调整类型（10用户充值  11 分成结算  20 ID卡充值 21 使用设备  22 提现）
-        "createTime": "2017-07-15 00:21:02",
-        "orderId": "bb8e5a91dd3c4ffbbb16325d309d5c8c"
-      },
-      {
-        "id": "1f80b02a114044bfa1f2f114c9366905",
-        "accountId": "2",
-        "beforeAdjustMoney": 9799.08,
-        "adjustMoney": -50.23,
-        "afterAdjustMoney": 9748.85,
-        "adjustType": 0,
-        "createTime": "2017-07-15 00:19:36",
-        "orderId": "bb8e5a91dd3c4ffbbb16325d309d5c8c"
-      }
-    ]
-  }
+
+    "code": 0,
+    "data": {
+        "totalCount": 2,
+        "limit": 10,
+        "totalPage": 1,
+        "page": 1,
+        "list": [
+            {
+                "id": "1000001428748560",
+                "accountId": "1000002069833279",
+                "beforeAdjustMoney": 1000,
+                "adjustMoney": -100,
+                "afterAdjustMoney": 900,
+                "adjustType": 1,  //调整类型  用户充值 10 分成结算 11  ID卡充值 20  使用设备 21 提现 22
+                "createTime": "2017-08-16 18:28:07",
+                "orderId": "120170816182453000001"
+            },
+            {
+                "id": "1000001088119627",
+                "accountId": "1000002069833279",
+                "beforeAdjustMoney": 900,
+                "adjustMoney": -100,
+                "afterAdjustMoney": 800,
+                "adjustType": 1,
+                "createTime": "2017-08-16 18:36:20",
+                "orderId": "120170816182453000001"
+            }
+        ]
+    }
 }
 
 ```
+### ID卡激活接口
+**接口地址**：http://localhost:8080/api/app/card/active
+#### 请求参数
+```javascript
+{ 
 
+	"code" : "001",  //卡后
+	"cardHoldName":"pengxiao", //持卡人姓名
+	"cardHoldPhone" : "13776540149"  //持卡人号码
+}
+```
+#### 响应参数
+```javascript
+{
 
+ 	"code":"0",
+    "msg":""
+}
+```
 
-
-### ID卡绑定接口
+### 卡绑定接口
 
 **接口地址**：http://.../api/app/card/bind
 
 #### 请求参数
 ```javascript
 {
-	 
-   "code" : "001", //卡号码
-	"cardHoldName":"pengxiao2", //持卡人姓名
-	"cardHoldPhone" : "13776540148" //持卡人姓名
+
+    "code":"HH001", //卡号
 }
 ```
 #### 响应参数
 ```javascript
 {
+
  	"code":"0",
     "msg":""
 }
 ```
-
-
 ### ID卡详情接口
 
 **接口地址**：http://.../api/app/card/info
@@ -376,62 +391,137 @@
 #### 请求参数
 ```javascript
 {
+
  	"token":"1111", //token
     "code":"HH001", //卡号
+
 }
 ```
 #### 响应参数
 ```javascript
 {
-    "code":0,
-    "data":{
-        "id":"db3b8e9e9fca408ba0192583f9a66512",
-        "userId":2,
-        "code":"SX0072", //卡号
-        "count":0, //剩余次数
-        "createTime":"2017-07-25 21:56:11",
-        "lastUseTime":null
+
+    "code": 0,
+    "data": {
+        "id": "0",
+        "isActive": 1,  //是否激活
+        "merchantId": "10", //商户id
+        "code": "001",
+        "count": null,
+        "createTime": null,
+        "lastUseTime": null,
+        "cardHoldName": "pengxiao",
+        "cardHoldPhone": "13776540149",
+        "isBind": 1, //是否绑定
+        "userId": 17
     }
 }
 ```
-### ID卡使用记录接口
 
-**接口地址**：http://.../api/app/card/rechargerecord
+### 用户id卡查询接口
+
+**接口地址**：http://localhost:8080/api/app/card/mycard
 
 #### 请求参数
 ```javascript
 {
-    "code":"001",
-	"startTime":"2017-07-01", //开始时间
-	"endTime":"2017-09-01"  //结束时间
+ 	"token":"1111" //token
+ 
+}
+```
+#### 响应参数
+```javascript
+{
+
+    "code": 0,
+    "data": {
+        "id": "0",
+        "isActive": 1,
+        "merchantId": "10",
+        "code": "001",
+        "count": null,
+        "createTime": null,
+        "lastUseTime": null,
+        "cardHoldName": "pengxiao",
+        "cardHoldPhone": "13776540149",
+        "isBind": 0,
+        "userId": 17
+    }
+}
+```
+
+### ID卡使用记录接口
+
+**接口地址**：http://localhost:8080/api/app/card/history
+
+#### 请求参数
+```javascript
+{
+
+    "token":"1111", //token
+	"code":"001",
+	"startTime":"2017-07-01",
+	"endTime":"2017-09-01",
      "page":"1",  //页码
     "limit":"1"//每页数量
 }
 ```
 #### 响应参数
 ```javascript
+
 {
-  "code": 0,
-  "data": {
-    "totalCount": 1,
-    "limit": 10,
-    "totalPage": 1,
-    "page": 1,
-    "list": [
-      {
-        "id": "1",
-       
-        "code": "001",
-        "count": 10,
-        "type": 1, //1设备使用 2充值 
-        "payType": "1", //0支付宝 1微信 2银联 3个人账户
-        "createTime": "2017-07-25 22:30:35",
-        "adjustCount": null
-      }
-    ]
-  }
+
+    "code": 0,
+    "data": {
+        "totalCount": 4,
+        "limit": 10,
+        "totalPage": 1,
+        "page": 1,
+        "list": [
+            {
+                "id": "1",
+                "code": "001",
+                "count": 10,
+                "type": 1,
+                "payType": "1",
+                "createTime": "2017-07-25 22:30:35",
+                "adjustCount": null
+            },
+            {
+                "id": "ff503f9b18c34aba925cc994f64e48d6",
+                "code": "001",
+                "count": 98,
+                "type": 1,
+                "payType": null,
+                "createTime": "2017-07-27 23:08:15",
+                "adjustCount": null
+            },
+            {
+                "id": "a4812b01431143998da1f9b853e41636",
+                "code": "001",
+                "count": 97,
+                "type": 1,
+                "payType": null,
+                "createTime": "2017-07-27 23:11:40",
+                "adjustCount": 1
+            },
+            {
+                "id": "25c40515be8c4fce88266fbe4d91f34e",
+                "code": "001",
+                "count": 96,
+                "type": 1,
+                "payType": null,
+                "createTime": "2017-07-27 23:11:55",
+                "adjustCount": 1
+            }
+        ]
+    }
 }
 ```
+
+
+
+
 ### 银行卡列表
 
 **接口地址**：http://.../userbankcard/list
