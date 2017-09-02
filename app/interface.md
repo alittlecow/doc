@@ -551,6 +551,160 @@
 }
 ```
 
+###分销商/商户设备列表接口
+
+**接口地址**：http://localhost/api/app/device/list
+
+#### 请求参数
+```javascript
+{
+  "token":"1111", //token
+}
+```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+    "data": {
+        "totalCount": 11,
+        "limit": 10,
+        "totalPage": 2,
+        "page": 1,
+        "list": [
+            {
+                "id": "001",
+                "code": "0002",
+                "sim": "sim",
+                "useStatus": 1,
+                "isBreakdown": 1,
+                "merchantId": 18,
+                "merchantName": "商户张柳健",
+                "bindStatus": 1,
+                "operateTime": "2017-08-20 22:49:50",
+
+            },
+            {
+                "id": "1000000034593580",
+                "code": "10003b",
+                "sim": null,
+                "useStatus": 1,
+                "isBreakdown": 0,
+                "merchantId": 18,
+                "merchantName": "商户张柳健",
+                "bindStatus": 1,
+                "operateTime": "2017-08-23 22:29:57",
+            },
+            {
+                "id": "1000000842672371",
+                "code": "1000b",
+                "sim": null,
+                "useStatus": 0,
+                "isBreakdown": 0,
+                "merchantId": 18,
+                "merchantName": "商户张柳健",
+                "bindStatus": 1,
+                "operateTime": "2017-08-29 16:28:38",
+            }
+
+        ]
+    }
+}
+
+```
+
+
+###设备信息接口
+
+**接口地址**：http://localhost:80/api/app/device/info
+
+#### 请求参数
+```javascript
+{
+  "token":"1111", //token
+}
+```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+    "data": {
+        "id": "1a432cab947c4a5a8200cc1748af263c",
+        "code": "0005",
+        "sim": "",
+        "useStatus": 0,
+        "isBreakdown": 0,
+        "merchantId": 18,
+        "merchantName": "商户张柳健",
+        "bindStatus": 1,
+        "operateTime": "2017-08-01 08:38:31"
+    }
+}
+
+```
+
+###更新设备信息接口
+
+**接口地址**：http://localhost:80/api/app/device/update
+
+#### 请求参数
+```javascript
+{
+  "token":"1111", //token
+  	"code":"0005",   /设备编码
+	"isBreakdown":"0",  //设备是否故障 1故障 0正常
+	"useStatus": 1  //设备使用状态（0未使用 1使用中）
+}
+```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+    "msg":""
+}
+
+```
+
+### 设备历史记录接口
+
+**接口地址**：http://localhost:8080/api/app/card/history
+
+#### 请求参数
+```javascript
+{
+  "token":"1111", //token
+  "code":"001",
+  "startTime":"2017-07-01",
+  "endTime":"2017-09-01",
+  "page":"1",  //页码
+  "limit":"1"//每页数量
+}
+```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+    "data": {
+        "totalCount": 1,
+        "limit": 1,
+        "totalPage": 1,
+        "page": 1,
+        "list": [
+            {
+                "id": "1",
+                "deviceCode": "0005",
+                "reportTime": "2017-07-13 18:11:16",
+                "value": 55.55,
+                "createTime": "2017-07-13 18:11:25"
+            }
+        ]
+    }
+}
+
+```
+
+
+
+
 
 ### 银行卡列表
 
