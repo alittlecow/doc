@@ -559,6 +559,9 @@
 ```javascript
 {
   "token":"1111", //token
+    "page":"1",  //页码
+  "limit":"1"//每页数量,
+  "merchantId":"1111"  //分销商用户需要传入要查询的商户ID 不传默认查询所有
 }
 ```
 #### 响应参数
@@ -612,6 +615,39 @@
 
 ```
 
+###分销商（商户查询接口）
+
+**接口地址**：http://localhost:80/api/app/device/dealerlist
+
+#### 请求参数
+```javascript
+{
+  "token":"1111", //token
+  "deptId":"17"  //第一次查询不用传，后续查询需要传入要查询节点的id
+}
+```
+#### 响应参数
+```javascript
+{
+    "code": 0,
+    "data": [
+        {
+            "deptId": 18,
+            "parentId": 17,
+            "name": "商户张柳健",
+            "level": 2,
+            "levelName": null,
+            "address": "凤翔新城",
+            "parentName": "南京市分销商",
+            "orderNum": 0,
+            "userId": 22,
+            "open": null,
+            "list": null
+        }
+    ]
+}
+
+```
 
 ###设备信息接口
 
@@ -621,6 +657,7 @@
 ```javascript
 {
   "token":"1111", //token
+  "code":"0005"
 }
 ```
 #### 响应参数
@@ -666,7 +703,7 @@
 
 ### 设备历史记录接口
 
-**接口地址**：http://localhost:8080/api/app/card/history
+**接口地址**：http://localhost:80/api/app/device/historydata
 
 #### 请求参数
 ```javascript
